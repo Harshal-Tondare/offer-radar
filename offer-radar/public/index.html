@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Offer Radar 2027 · Jobs, DSA &amp; Hiring Rounds</title>
+<style>
+:root{--bg:#050506;--card:#0e0f12;--card2:#14161b;--tx:#f2f3f7;--mut:#8b90a0;--bd:#1f222a;--ac:#22d3ee;--ac2:#a78bfa;--ok:#4ade80;--warn:#fbbf24;color-scheme:dark;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);background:var(--bg)}
+body{margin:0;color:var(--tx);font:16px/1.5 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;min-height:100vh;background:radial-gradient(900px 420px at 10% -10%,rgba(34,211,238,.14),transparent 60%),radial-gradient(800px 400px at 95% 0%,rgba(167,139,250,.13),transparent 60%),var(--bg)}
+main{max-width:900px;margin:0 auto;padding:26px 16px 60px}
+.pill{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;color:var(--mut);border:1px solid var(--bd);background:rgba(255,255,255,.03);padding:4px 12px;border-radius:999px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--ok);box-shadow:0 0 10px var(--ok);animation:p 2s infinite}
+@keyframes p{50%{opacity:.35}}
+h1{font-size:clamp(2rem,6vw,3rem);line-height:1.08;margin:14px 0 8px;letter-spacing:-.03em;font-weight:800}
+h1 span{background:linear-gradient(90deg,var(--ac),var(--ac2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--mut);margin:0 0 16px}
+.stats{display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap}
+.stat{flex:1;min-width:90px;background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:12px 14px}
+.stat b{display:block;font-size:1.5rem}.stat i{font-style:normal;color:var(--mut);font-size:.78rem}
+#q{width:100%;box-sizing:border-box;background:var(--card);border:1px solid var(--bd);color:var(--tx);border-radius:14px;padding:12px 16px;font:inherit;outline:none;margin-bottom:12px}
+#q:focus{border-color:var(--ac);box-shadow:0 0 0 3px rgba(34,211,238,.15)}
+nav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+button{font:inherit;cursor:pointer}
+.tab,.f{border:1px solid var(--bd);background:var(--card);color:var(--mut);padding:9px 16px;border-radius:12px;font-size:.9rem;transition:.18s}
+.tab:hover,.f:hover{color:var(--tx);border-color:#343947}
+.tab.on{background:linear-gradient(135deg,var(--ac),var(--ac2));color:#050506;border-color:transparent;font-weight:700}
+.f.on{color:var(--tx);border-color:var(--ac);background:rgba(34,211,238,.08)}
+.note{border-left:2px solid var(--warn);background:rgba(251,191,36,.06);border-radius:0 10px 10px 0;padding:10px 14px;font-size:.82rem;color:var(--mut);margin:14px 0}
+.card{background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--bd);border-radius:16px;margin:10px 0;transition:.2s;overflow:hidden}
+.card:hover,.card.open{border-color:rgba(34,211,238,.45);box-shadow:0 10px 30px -12px rgba(34,211,238,.25)}
+.head{display:flex;gap:14px;align-items:center;padding:14px 16px;cursor:pointer}
+.av{flex:none;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-weight:800;color:#050506}
+.info{flex:1;min-width:0}
+.card h3{margin:0;font-size:1rem}
+.co{color:var(--mut);font-size:.88rem}
+.meta{margin-top:6px}
+.tag{display:inline-block;font-size:.7rem;padding:2px 9px;border-radius:999px;border:1px solid var(--bd);margin:0 6px 4px 0;color:var(--mut)}
+.tag.b{color:var(--ok);border-color:rgba(74,222,128,.5);background:rgba(74,222,128,.08)}
+.tag.w{color:var(--warn);border-color:rgba(251,191,36,.5)}
+.chev{color:var(--mut);transition:.25s;font-size:1.1rem}
+.open .chev{transform:rotate(180deg);color:var(--ac)}
+.more{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s ease}
+.open .more{grid-template-rows:1fr}
+.more>div{overflow:hidden}
+.body{padding:0 16px 16px;border-top:1px solid var(--bd);margin:0 0 0}
+.body p{margin:12px 0 6px;font-size:.9rem;color:#c9ccd8}
+.body ul{margin:6px 0 12px;padding-left:18px;color:var(--mut);font-size:.85rem}
+.acts{display:flex;gap:8px;flex-wrap:wrap}
+a.go{background:var(--tx);color:#050506;text-decoration:none;padding:9px 18px;border-radius:11px;font-size:.88rem;font-weight:700}
+a.go:hover{background:var(--ac)}
+.sm{background:transparent;border:1px solid var(--bd);color:var(--tx);padding:8px 14px;border-radius:11px;font-size:.85rem}
+.sm.on{border-color:var(--ok);color:var(--ok)}
+h2{font-size:.8rem;text-transform:uppercase;letter-spacing:.12em;color:var(--mut);margin:30px 0 8px}
+.src a{display:inline-block;margin:4px 8px 4px 0;color:var(--tx);text-decoration:none;font-size:.88rem;border:1px solid var(--bd);background:var(--card);padding:7px 14px;border-radius:10px}
+.src a:hover{border-color:var(--ac);color:var(--ac)}
+.card.done{opacity:.55}
+.tl{border-left:2px solid var(--bd);margin:10px 0 14px 8px;padding-left:16px}
+.tl div{position:relative;margin:0 0 12px}.tl div:before{content:"";position:absolute;left:-23px;top:6px;width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,var(--ac),var(--ac2))}
+.tl b{display:block;font-size:.95rem}.tl span{color:var(--mut);font-size:.85rem}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+.pb{display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:10px 14px;margin:6px 0;text-decoration:none;color:var(--tx);font-size:.9rem}
+.pb:hover{border-color:var(--ac)}.pb i{font-style:normal;font-size:.72rem;color:var(--mut)}
+.box{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:6px 16px 14px;margin:12px 0}
+.ck{display:flex;gap:10px;align-items:center;padding:7px 0;font-size:.9rem;cursor:pointer}
+.bar{height:6px;border-radius:6px;background:var(--bd);overflow:hidden;margin:8px 0}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--ac),var(--ac2))}
+.dr{display:flex;gap:10px;align-items:center}.dr .pb{flex:1}.dr input{width:18px;height:18px;flex:none}
+.e{color:var(--ok)}.m{color:var(--warn)}.h{color:#f87171}
+.flow{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin:8px 0 4px;font-size:.78rem;color:var(--mut)}
+.flow b{border:1px solid var(--bd);background:var(--card);border-radius:8px;padding:4px 10px;color:var(--tx);font-weight:600}
+h4{margin:14px 0 4px;font-size:.9rem;color:var(--ac)}
+.back{margin:0 0 14px}.dh{display:flex;gap:14px;align-items:center;margin:6px 0 10px}
+.sec{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:6px 18px 12px;margin:12px 0}
+.sec h3{margin:12px 0 6px;font-size:1.05rem}.sec h3 em{font-style:normal;color:var(--ac);margin-right:8px}
+.sec ul{margin:4px 0;padding-left:20px;color:#c9ccd8;font-size:.92rem}.sec li{margin:5px 0}
+.lv{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:12px 14px;margin:12px 0}.lv select,.lv input{background:var(--card2);color:var(--tx);border:1px solid var(--bd);border-radius:10px;padding:8px 10px;font:inherit;margin:0 6px 6px 0}
+.dpq{width:100%;box-sizing:border-box;background:var(--card);border:1px solid var(--bd);color:var(--tx);border-radius:12px;padding:10px 14px;font:inherit;margin:8px 0}
+</style>
+</head>
+<body>
+<main>
+<span class="pill"><i class="dot"></i><span id="upd">Batch 2027 · built-in list</span></span>
+<h1>Offer Radar<br><span>2027 jobs, DSA &amp; hiring rounds.</span></h1>
+<p class="sub">Internships and PPO roles open to 2027 graduates. Tap any role to see its full hiring process, from eligibility to HR round.</p>
+<nav id="views"></nav>
+<div id="jobsv">
+<div class="stats" id="stats"></div>
+<input id="q" type="search" placeholder="Search company or role…" autocomplete="off">
+<nav id="tabs"></nav>
+<nav id="types"></nav>
+<nav id="ctypes"></nav>
+<div id="live"></div>
+<div class="note">This page is static: edit the D array in the source to add new roles. Many 2027 roles are summer internships, and some may have closed since posting, so check the “Posted” tag and the company’s own page.</div>
+<div id="list"></div>
+<h2>Search the entire web: service, product and startup</h2>
+<div class="src" id="src"></div>
+</div>
+<div id="prep" hidden></div>
+<div id="dsa" hidden></div>
+<div id="det" hidden></div>
+<div id="dsp" hidden></div>
+</main>
+<script>
+var D=[
+["sde","Software Engineering Intern, Summer 2027","Google","Bengaluru / Hyderabad / Pune","Internship","Google Careers","https://www.google.com/about/careers/applications/jobs/results/120997883141857990-software-engineering-intern-summer-2027","2027, 2028","Posted Jun 2026 · may be closed","10–12 week paid internship; interns can interview for full-time roles. Skills asked: data structures, algorithms, OOP."],
+["sde","Summer 2027 Intern, Software Engineer","Salesforce","Bengaluru / Hyderabad","Internship","freshershunt","https://freshershunt.in/?p=52147","2027, 2028","Posted Aug 2026","B.E/B.Tech in CS, IT or circuit branches. Stipend not disclosed. Check the official page for status."],
+["sde","Software Engineering Intern (PPO possible)","Walmart Global Tech","Bangalore","Internship","freshershunt","https://freshershunt.in/walmart-internship-2027/","2027","Open: apply soon","Needs 7.0+ CGPA aggregate. Works on production systems and can lead to a pre-placement offer."],
+["sde","Software Engineering Intern, Summer 2027","YouTube (Google)","Bengaluru","Internship","Refresh.cv","https://refresh.cv/jobs/youtube-google/171d6af4-c86b-43ed-9e9e-a3b0e3d0a16b","2027","Listed recently","On-site internship. Confirm the open status on Google Careers."],
+["sde","Software Engineering Intern (+PPO), ₹1L/month","Microsoft","Pan India","Internship","Telegram list","https://t.me/s/ninjajobs","2027, 2028","Community-shared","Listed by a job-alert channel, not an official page. Find the role on careers.microsoft.com before applying."],
+["sde","Digital Specialist Engineer (DSE) / Specialist Programmer (SP)","Infosys","Pan India","Full-time","Infosys Careers","https://career.infosys.com/","2027","Check Infosys portal","On-campus or off-campus drives; HackWithInfy can fast-track you to DSE or SP interviews."],
+["sde","TCS NQT: Ninja / Digital / Prime","TCS","Pan India","Full-time","TCS NextStep","https://nextstep.tcs.com/","2027 (confirm)","Check portal for 2027 drive","Register on the TCS NextStep portal; NQT score decides Ninja, Digital or Prime."],
+["sde","Elite NTH: Project Engineer","Wipro","Pan India","Full-time","Wipro Careers","https://careers.wipro.com/","2027 (confirm)","Check portal for 2027 drive","Wipro’s national talent hunt for fresh engineers; check the portal for the 2027 drive."],
+["sde","GenC / GenC Next / GenC Elevate","Cognizant","Pan India","Full-time","Cognizant Careers","https://careers.cognizant.com/","2027 (confirm)","Check portal for 2027 drive","Three fresher tracks; harder coding tests unlock the higher tracks."],
+["sde","Associate Software Engineer (ASE) / Advanced ASE","Accenture","Pan India","Full-time","Accenture Careers","https://www.accenture.com/in-en/careers","2027 (confirm)","Check portal for 2027 drive","Two fresher tracks; guides report a 60% aggregate requirement."],
+["sde","Analyst / Exceller","Capgemini","Pan India","Full-time","Capgemini Careers","https://www.capgemini.com/in-en/careers/","2027 (confirm)","Check portal for 2027 drive","Analyst roles with a higher-pay Exceller track."],
+["sde","Graduate Engineer Trainee / AMP","HCLTech","Pan India","Full-time","HCLTech Careers","https://careers.hcltech.com/","2027 (confirm)","Check portal for 2027 drive","Separate programmes list their own eligibility; read each notice."],
+["sde","Software Engineer (Fresher)","Tech Mahindra","Pan India","Full-time","Tech Mahindra Careers","https://careers.techmahindra.com/","2027 (confirm)","Check portal for 2027 drive","Drives often use assessment partners; apply on the official portal."],
+["sde","Graduate Engineer Trainee","LTIMindtree","India","Full-time / Internship","Official careers portal","https://www.ltimindtree.com/careers/","2027 (confirm)","Check portal for 2027 drive","Official careers page; search by batch and role. Process shown here is a typical outline."],
+["sde","Software Engineer Trainee","Mphasis","India","Full-time / Internship","Official careers portal","https://careers.mphasis.com/","2027 (confirm)","Check portal for 2027 drive","Official careers page; search by batch and role. Process shown here is a typical outline."],
+["sde","Graduate Engineer Trainee","Hexaware","India","Full-time / Internship","Official careers portal","https://hexaware.com/careers/","2027 (confirm)","Check portal for 2027 drive","Official careers page; search by batch and role. Process shown here is a typical outline."],
+["sde","Software Engineer Trainee","Persistent Systems","India","Full-time / Internship","Official careers portal","https://www.persistent.com/careers/","2027 (confirm)","Check portal for 2027 drive","Official careers page; search by batch and role. Process shown here is a typical outline."],
+["sde","Graduate Engineer Trainee","Coforge","India","Full-time / Internship","Official careers portal","https://careers.coforge.com/","2027 (confirm)","Check portal for 2027 drive","Official careers page; search by batch and role. Process shown here is a typical outline."],
+["sde","Graduate Trainee / Analyst","Genpact","India","Full-time / Internship","Official careers portal","https://www.genpact.com/careers","2027 (confirm)","Check portal for 2027 drive","Official careers page; search by batch and role. Process shown here is a typical outline."],
+["sde","SDE Intern / SDE I (campus)","Amazon","India","Full-time / Internship","Official careers portal","https://www.amazon.jobs/","2027 (confirm)","Check portal for 2027 drive","Official careers page; search by batch and role. Process shown here is a typical outline."],
+["sde","Associate Software Developer / Intern","Oracle","India","Full-time / Internship","Official careers portal","https://careers.oracle.com/","2027 (confirm)","Check portal for 2027 drive","Official careers page; search by batch and role. Process shown here is a typical outline."],
+["sde","Software Engineer Intern","Adobe","India","Full-time / Internship","Official careers portal","https://careers.adobe.com/","2027 (confirm)","Check portal for 2027 drive","Official careers page; search by batch and role. Process shown here is a typical outline."],
+["sde","Software Engineer Intern","Cisco","India","Full-time / Internship","Official careers portal","https://jobs.cisco.com/","2027 (confirm)","Check portal for 2027 drive","Official careers page; search by batch and role. Process shown here is a typical outline."],
+["sde","Intern, Software Development Associate","Labcorp","Mumbai","Internship","TheJobCompany","https://thejobcompany.co.in/filter?page=94","2026, 2027","Check date","B.E/B.Tech/M.Tech. Use the Apply button on the listing."],
+["data","Intern, Data Analytics Associate","Labcorp","Bangalore","Internship","TheJobCompany","https://thejobcompany.co.in/filter?page=94","2026, 2027","Check date","B.E/B.Tech/M.Tech. Use the Apply button on the listing."],
+["data","Intern for Data and Analytics","Thomson Reuters","Bengaluru (Hybrid)","Internship","freshershunt","https://freshershunt.in/?p=51792","2026, 2027","Check date","For B.Tech/M.Tech in Data Science, Analytics, CS or related fields."],
+["data","Data Analytics Intern (6 months)","Aon","India","Internship","Freshersnow","https://www.freshersnow.com/aon-internship/","2026, 2027","Check date","Bachelor’s or Master’s in Computer Science."],
+["data","Data Analyst Intern","Codec Technologies","Pan India","Internship","Jobdexo","https://jobdexo.com/job/C165-J036/data-analyst-intern-codec-technologies-2026","2025–2027","Check date","Any discipline, 60% minimum. Skills: SQL, Excel, Python, Tableau or Power BI."],
+["data","Data Analyst Internship (remote, ₹10–15k)","Zenotalent","Remote","Internship","TheJobCompany","https://thejobcompany.co.in/frontend/job_details?job_id=6017","2026, 2027","Updated Jun 2026","Remote internship that can convert to a full-time role."],
+["data","Data Analytics Intern (remote, 4–6 months)","Analytics Career Connect","Remote","Internship","SimplyHired","https://www.simplyhired.co.in/job/Em8cdWc3lPkGGEe2GZehL4OJwc_TO_1VqOPz3gsN2UnESYMhH8-bSA","2027, 2028, 2029","Check date","Small company. Research it on LinkedIn before applying."],
+["ai","Data Science Intern","Microsoft","Bangalore","Internship","Microsoft Careers","https://apply.careers.microsoft.com/careers/job/1970393556625290","2027","Shared by alert channel","Official Microsoft link. Confirm it is still open."],
+["ai","Data Science Intern","Zeotap","Bengaluru","Internship","Lever","https://jobs.lever.co/zeotap/fcbef23e-0bf4-4312-89b5-634f89d169e9","2025–2027","May be old","Stipend quoted by the sharing channel is ₹35–65k/month, so verify it. The role may be closed."],
+["ai","R&D Intern: Data, AI/ML & Systems","FluxGen","Bangalore","Internship","LinkedIn","https://www.linkedin.com/jobs/view/4328004001/","2025–2027","Check date","Startup R&D internship covering data, AI/ML and systems."],
+["ai","AI/ML Intern (+PPO), ₹30–50k/month","Unique","Bengaluru","Internship","Telegram list","https://t.me/s/ninjajobs","2025–2027","Community-shared","From a job-alert channel. Check the company on LinkedIn first."],
+["ai","Research Science Intern (+PPO), ₹80k/month","Microsoft","Pan India","Internship","Telegram list","https://t.me/s/ninjajobs","2025–2027","Community-shared","Research-heavy. Find the official role on careers.microsoft.com."]
+];
+var TIPS={sde:["Practise medium DSA problems daily","Build one project with a deployed link","Keep your GitHub and resume linked"],data:["Practise SQL joins and window functions","Make one dashboard in Power BI or Tableau","Prepare Python and pandas basics"],ai:["Revise ML basics: regression, classification, metrics","Put one ML project on GitHub","Learn how to call an LLM API in Python"]};
+var S={sde:"Software / SDE",data:"Data Analyst",ai:"AI / ML"};
+var sec="sde",typ="All",qs="",open=-1,st={};
+try{st=JSON.parse(localStorage.getItem("jobst")||"{}")}catch(e){}
+function save(){try{localStorage.setItem("jobst",JSON.stringify(st))}catch(e){}}
+function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+function hue(t){var h=0;for(var i=0;i<t.length;i++)h=(h*31+t.charCodeAt(i))%360;return h}
+document.getElementById("q").oninput=function(){qs=this.value.toLowerCase();render()};
+function key(d){return d[1]+"|"+d[2]}
+function renderJobs(){
+ var s=document.getElementById("stats");s.innerHTML="";
+ [[D.length,"Roles for 2027"],[Object.keys(st).filter(function(k){return st[k]=="s"}).length,"Saved"],[Object.keys(st).filter(function(k){return st[k]=="a"}).length,"Applied"]].forEach(function(x){var b=el("div","stat");b.appendChild(el("b",0,x[0]));b.appendChild(el("i",0,x[1]));s.appendChild(b)});
+ var tb=document.getElementById("tabs");tb.innerHTML="";
+ for(var k in S){(function(k){var b=el("button","tab"+(k==sec?" on":""),S[k]+" ("+D.filter(function(d){return d[0]==k}).length+")");b.onclick=function(){sec=k;open=-1;render()};tb.appendChild(b)})(k)}
+ var ty=document.getElementById("types");ty.innerHTML="";
+ ["All","Saved","Applied"].forEach(function(t){var b=el("button","f"+(t==typ?" on":""),t);b.onclick=function(){typ=t;open=-1;render()};ty.appendChild(b)});
+ var ct=document.getElementById("ctypes");ct.innerHTML="";
+ ["All","Service-based","Product / MNC","Startup"].forEach(function(t){var b=el("button","f"+(t==ctf?" on":""),t);b.onclick=function(){ctf=t;open=-1;render()};ct.appendChild(b)});
+ renderLive();
+ var L=document.getElementById("list");L.innerHTML="";
+ var rows=D.filter(function(d){var v=st[key(d)];return d[0]==sec&&(typ=="All"||(typ=="Saved"&&v=="s")||(typ=="Applied"&&v=="a"))&&(ctf=="All"||ctype(d)==ctf)&&(d[1]+" "+d[2]).toLowerCase().indexOf(qs)>-1});
+ rows.forEach(function(d,n){
+  var v=st[key(d)],c=el("div","card"+(open==n?" open":"")+(v=="a"?" done":""));
+  var h=el("div","head"),av=el("div","av",d[2].charAt(0));av.style.background="linear-gradient(135deg,hsl("+hue(d[2])+",85%,65%),hsl("+(hue(d[2])+50)+",85%,60%))";
+  var i=el("div","info");i.appendChild(el("h3",0,d[1]));i.appendChild(el("div","co",d[2]+" · "+d[3]));
+  var m=el("div","meta");m.appendChild(el("span","tag b","Batch "+d[7]));m.appendChild(el("span","tag",d[4]));m.appendChild(el("span","tag w",d[8]));m.appendChild(el("span","tag",ctype(d)));if(v=="s")m.appendChild(el("span","tag b","★ Saved"));if(v=="a")m.appendChild(el("span","tag b","✓ Applied"));
+  i.appendChild(m);h.appendChild(av);h.appendChild(i);h.appendChild(el("div","chev","›"));
+  h.onclick=function(){showDet(d)};c.appendChild(h);
+  var mo=el("div","more"),w=el("div"),b=el("div","body");
+  b.appendChild(el("p",0,d[9]));b.appendChild(el("p",0,"Prep for this one:"));
+  var u=el("ul");TIPS[d[0]].forEach(function(t){u.appendChild(el("li",0,t))});b.appendChild(u);
+  var ac=el("div","acts"),a=el("a","go","Apply →");a.href=d[6];a.target="_blank";a.rel="noopener";ac.appendChild(a);
+  [["s","★ Save"],["a","✓ Mark applied"]].forEach(function(x){var bt=el("button","sm"+(v==x[0]?" on":""),x[1]);bt.onclick=function(){if(st[key(d)]==x[0])delete st[key(d)];else st[key(d)]=x[0];save();render()};ac.appendChild(bt)});
+  b.appendChild(ac);w.appendChild(b);mo.appendChild(w);c.appendChild(mo);L.appendChild(c)});
+ if(!rows.length)L.appendChild(el("p","sub","Nothing here yet."));
+ var sr=document.getElementById("src");sr.innerHTML="";
+ var q=encodeURIComponent({sde:"software engineer intern 2027",data:"data analyst intern 2027",ai:"AI ML intern 2027"}[sec]);
+ [["Google (entire web)","https://www.google.com/search?q="+q+"+2027+batch+freshers+off+campus"],["Service-based drives","https://www.google.com/search?q=TCS+OR+Infosys+OR+Wipro+OR+Cognizant+OR+Accenture+OR+Capgemini+2027+batch+off+campus+drive"],["Indeed","https://in.indeed.com/jobs?q="+q+"&sort=date"],["LinkedIn","https://www.linkedin.com/jobs/search/?keywords="+q+"&f_TPR=r604800"],["Unstop","https://unstop.com/internships"],["Wellfound","https://wellfound.com/jobs"],["Internshala","https://internshala.com/internships"],["Naukri","https://www.naukri.com/internship-jobs"],["Foundit","https://www.foundit.in/"],["Freshersworld","https://www.freshersworld.com/"],["Glassdoor","https://www.glassdoor.co.in/Job/index.htm"]].forEach(function(p){var a=el("a",0,p[0]+" ↗");a.href=p[1];a.target="_blank";a.rel="noopener";sr.appendChild(a)});
+}
+var view="jobs",co="Google",ck={};
+try{ck=JSON.parse(localStorage.getItem("dsack")||"{}")}catch(e){}
+var LC="https://leetcode.com/problems/";
+var TOP=["Arrays & Strings","Hashing","Two pointers & sliding window","Binary search","Linked lists","Stacks & queues","Recursion & backtracking","Trees & BST","Heaps / priority queue","Graphs (BFS, DFS)","Dynamic programming","Greedy & intervals","SQL (joins, window functions)"];
+var P={
+"Google":{stages:[["Application & resume screen","Strong projects, DSA profile and GPA help here."],["Online assessment (sometimes)","Coding questions on a timer. Not every year or team."],["2–3 virtual technical interviews","About 45 min each: one or two DSA problems, you explain your thinking aloud."],["Hiring committee & team match","Interview feedback is reviewed, then a team is matched."]],topics:["Graphs","Dynamic programming","Trees","Arrays & strings","Binary search"],probs:[["Number of Islands","number-of-islands","Medium"],["Word Break","word-break","Medium"],["Merge Intervals","merge-intervals","Medium"],["Median of Two Sorted Arrays","median-of-two-sorted-arrays","Hard"],["Course Schedule","course-schedule","Medium"]],tip:"Talk through brute force first, then optimise. State time and space complexity every time."},
+"Microsoft":{stages:[["Application & resume screen","Internships often start with a form plus resume."],["Online assessment","Usually 2–3 coding questions on a platform."],["Virtual interview loop","3–4 rounds: DSA, some design basics, and behavioural questions."],["Hiring manager round","Project discussion and fit."]],topics:["Arrays & strings","Linked lists","Trees","Graphs","Dynamic programming"],probs:[["Reverse Linked List","reverse-linked-list","Easy"],["LRU Cache","lru-cache","Medium"],["Lowest Common Ancestor of a Binary Tree","lowest-common-ancestor-of-a-binary-tree","Medium"],["Clone Graph","clone-graph","Medium"],["Longest Palindromic Substring","longest-palindromic-substring","Medium"]],tip:"Clean, readable code and edge cases matter. Be ready to walk through your own projects."},
+"Amazon":{stages:[["Online assessment","Typically two coding problems plus a work-style / behavioural assessment."],["Technical interviews","2–3 rounds: DSA plus Leadership Principle questions in every round."],["Bar raiser / final round","Deeper behavioural and technical check."]],topics:["Arrays & strings","Hashing","Trees","Heaps","Graphs","Greedy & intervals"],probs:[["Two Sum","two-sum","Easy"],["Top K Frequent Elements","top-k-frequent-elements","Medium"],["Rotting Oranges","rotting-oranges","Medium"],["Merge k Sorted Lists","merge-k-sorted-lists","Hard"],["Trapping Rain Water","trapping-rain-water","Hard"]],tip:"Prepare 6–8 stories (STAR format) from projects and teamwork for the Leadership Principles."},
+"Salesforce":{stages:[["Online assessment","Coding round, often on a hosted platform, sometimes with CS-fundamentals MCQs."],["Technical interviews","DSA plus questions on your projects and OOP."],["Manager / HR round","Culture fit and expectations."]],topics:["Arrays & strings","Hashing","Trees","Dynamic programming","Stacks & queues"],probs:[["Valid Parentheses","valid-parentheses","Easy"],["Group Anagrams","group-anagrams","Medium"],["Min Stack","min-stack","Medium"],["Coin Change","coin-change","Medium"],["Validate Binary Search Tree","validate-binary-search-tree","Medium"]],tip:"Revise OOP, DBMS and OS basics along with DSA."},
+"Walmart":{stages:[["Application with CGPA check","Internship needs 7.0+ aggregate CGPA."],["Online assessment","Coding questions and often CS-fundamentals MCQs."],["Technical interviews","DSA, projects, and problem-solving approach."],["Managerial / HR round","Fit, then a possible pre-placement offer after the internship."]],topics:["Arrays & strings","Two pointers & sliding window","Trees","Graphs","Dynamic programming"],probs:[["Longest Substring Without Repeating Characters","longest-substring-without-repeating-characters","Medium"],["3Sum","3sum","Medium"],["Subarray Sum Equals K","subarray-sum-equals-k","Medium"],["Kth Largest Element in an Array","kth-largest-element-in-an-array","Medium"],["Binary Tree Level Order Traversal","binary-tree-level-order-traversal","Medium"]],tip:"Practise on a timer. Online assessments reward speed with correct edge cases."},
+"Infosys / TCS / Wipro":{stages:[["Registration & eligibility check","Marks cut-offs and batch rules apply."],["Online test","Aptitude, reasoning and verbal; higher-pay roles add coding."],["Technical interview","Basics of programming, DBMS, OOP, and your projects."],["HR interview","Communication, relocation, and joining details."]],topics:["Arrays & strings","Hashing","Recursion & backtracking","SQL (joins, window functions)"],probs:[["Valid Parentheses","valid-parentheses","Easy"],["Best Time to Buy and Sell Stock","best-time-to-buy-and-sell-stock","Easy"],["Maximum Subarray","maximum-subarray","Medium"],["Climbing Stairs","climbing-stairs","Easy"]],tip:"Practise aptitude daily. Higher roles like Digital or Specialist Programmer test harder coding."},
+"Data Analyst roles":{stages:[["Resume screen","Highlight SQL, Excel, Python and a dashboard project."],["Online test","SQL queries, aptitude, and sometimes a small case."],["Technical interview","SQL, statistics basics, and walking through a dataset problem."],["Case / business round","Metric thinking: what would you measure and why."]],topics:["SQL (joins, window functions)","Arrays & strings","Hashing"],probs:[["Second Highest Salary","second-highest-salary","Medium"],["Department Top Three Salaries","department-top-three-salaries","Hard"],["Consecutive Numbers","consecutive-numbers","Medium"],["Rank Scores","rank-scores","Medium"]],tip:"Build one dashboard (Power BI or Tableau) on a public dataset and be ready to explain every number."},
+"AI / ML roles":{stages:[["Resume & GitHub screen","Projects with results matter more than certificates."],["Online test","Python coding, ML MCQs, sometimes SQL."],["Technical interview","ML basics (bias-variance, metrics), your project, and coding."],["Team / manager round","Problem-solving and learning attitude."]],topics:["Arrays & strings","Hashing","Heaps / priority queue","Dynamic programming"],probs:[["Top K Frequent Elements","top-k-frequent-elements","Medium"],["Find Median from Data Stream","find-median-from-data-stream","Hard"],["Product of Array Except Self","product-of-array-except-self","Medium"]],tip:"Know your own project deeply: data, model choice, metric, and what you would improve."}
+};
+function renderPrep(){
+ var r=document.getElementById("prep");r.innerHTML="";
+ var d=P[co],h=el("h2",0,"Company-wise hiring process");r.appendChild(h);
+ var cs=el("div","chips");Object.keys(P).forEach(function(k){var b=el("button","f"+(k==co?" on":""),k);b.onclick=function(){co=k;renderPrep()};cs.appendChild(b)});r.appendChild(cs);
+ r.appendChild(el("div","note","Stages are typical patterns gathered from public candidate reports, not official rules. They change by year and team, so confirm on the company’s careers page."));
+ var bx=el("div","box");bx.appendChild(el("h2",0,co+" · stages"));var tl=el("div","tl");
+ d.stages.forEach(function(x){var s=el("div");s.appendChild(el("b",0,x[0]));s.appendChild(el("span",0,x[1]));tl.appendChild(s)});bx.appendChild(tl);
+ bx.appendChild(el("h2",0,"Topics to focus on"));var tc=el("div","chips");d.topics.forEach(function(t){tc.appendChild(el("span","tag b",t))});bx.appendChild(tc);
+ bx.appendChild(el("h2",0,"Practice problems (commonly practised)"));
+ d.probs.forEach(function(p){var a=el("a","pb");a.href=LC+p[1]+"/";a.target="_blank";a.rel="noopener";a.appendChild(el("span",0,p[0]));a.appendChild(el("i",0,p[2]+" ↗"));bx.appendChild(a)});
+ bx.appendChild(el("div","note","Tip: "+d.tip));r.appendChild(bx);
+ var done=TOP.filter(function(t){return ck[t]}).length,b2=el("div","box");b2.appendChild(el("h2",0,"My DSA roadmap · "+done+"/"+TOP.length));
+ var bar=el("div","bar"),fi=el("i");fi.style.width=Math.round(done/TOP.length*100)+"%";bar.appendChild(fi);b2.appendChild(bar);
+ TOP.forEach(function(t){var row=el("label","ck"),cb=el("input");cb.type="checkbox";cb.checked=!!ck[t];cb.onchange=function(){if(cb.checked)ck[t]=1;else delete ck[t];try{localStorage.setItem("dsack",JSON.stringify(ck))}catch(e){}renderPrep()};row.appendChild(cb);row.appendChild(el("span",0,t));b2.appendChild(row)});
+ r.appendChild(b2);
+}
+
+var QD={
+"Google":[["Online assessment (some teams)","1–2 timed coding questions. Not used every year for interns.",[["Arrays & strings","Merge Intervals|merge-intervals|M;Product of Array Except Self|product-of-array-except-self|M;Longest Substring Without Repeating Characters|longest-substring-without-repeating-characters|M"],["Graphs","Number of Islands|number-of-islands|M;Course Schedule|course-schedule|M"]]],["Technical interview 1–2","About 45 min each: one or two problems, think aloud.",[["Trees & graphs","Clone Graph|clone-graph|M;Word Ladder|word-ladder|H;Lowest Common Ancestor of a Binary Tree|lowest-common-ancestor-of-a-binary-tree|M"],["Dynamic programming","Word Break|word-break|M;Longest Increasing Subsequence|longest-increasing-subsequence|M;Edit Distance|edit-distance|H"]]],["Final interview / team match","Harder follow-ups, then committee review.",[["Binary search & heaps","Median of Two Sorted Arrays|median-of-two-sorted-arrays|H;Find Median from Data Stream|find-median-from-data-stream|H"]]]],
+"Microsoft":[["Online assessment","2–3 coding questions on a platform.",[["Arrays & strings","Two Sum|two-sum|E;3Sum|3sum|M;Longest Palindromic Substring|longest-palindromic-substring|M"],["Linked lists","Reverse Linked List|reverse-linked-list|E;Merge Two Sorted Lists|merge-two-sorted-lists|E;Add Two Numbers|add-two-numbers|M"]]],["Technical interview loop (3–4 rounds)","DSA, light design, project and behavioural questions.",[["Trees","Binary Tree Level Order Traversal|binary-tree-level-order-traversal|M;Lowest Common Ancestor of a Binary Tree|lowest-common-ancestor-of-a-binary-tree|M;Validate Binary Search Tree|validate-binary-search-tree|M"],["Design-flavoured DSA","LRU Cache|lru-cache|M;Min Stack|min-stack|M;Copy List with Random Pointer|copy-list-with-random-pointer|M"],["Dynamic programming","Coin Change|coin-change|M;House Robber|house-robber|M"]]],["Hiring manager round","Project deep dive and fit. No set DSA list.",[]]],
+"Amazon":[["Online assessment","Two coding problems plus a work-style assessment.",[["Arrays, hashing & heaps","Two Sum|two-sum|E;Top K Frequent Elements|top-k-frequent-elements|M;K Closest Points to Origin|k-closest-points-to-origin|M"],["Graph / BFS","Rotting Oranges|rotting-oranges|M;Number of Islands|number-of-islands|M"]]],["Technical interviews (2–3)","DSA plus Leadership Principle questions in every round.",[["Trees & lists","Binary Tree Right Side View|binary-tree-right-side-view|M;Merge k Sorted Lists|merge-k-sorted-lists|H;Reorder List|reorder-list|M"],["Greedy & intervals","Meeting Rooms II|meeting-rooms-ii|M;Task Scheduler|task-scheduler|M;Trapping Rain Water|trapping-rain-water|H"]]],["Bar raiser","Behavioural deep dive plus one coding problem.",[["Mixed","LRU Cache|lru-cache|M;Word Break|word-break|M"]]]],
+"Salesforce":[["Online assessment","Coding round plus CS-fundamentals MCQs (OOP, DBMS, OS).",[["Stacks & strings","Valid Parentheses|valid-parentheses|E;Group Anagrams|group-anagrams|M;Daily Temperatures|daily-temperatures|M"],["Dynamic programming","Climbing Stairs|climbing-stairs|E;Coin Change|coin-change|M"]]],["Technical interviews","DSA, OOP and your projects.",[["Trees","Validate Binary Search Tree|validate-binary-search-tree|M;Kth Smallest Element in a BST|kth-smallest-element-in-a-bst|M;Diameter of Binary Tree|diameter-of-binary-tree|E"],["Design-flavoured DSA","Min Stack|min-stack|M;Implement Trie (Prefix Tree)|implement-trie-prefix-tree|M"]]],["Manager / HR round","Culture fit and expectations.",[]]],
+"Walmart":[["Application & CGPA check","Internship needs 7.0+ aggregate CGPA.",[]],["Online assessment","Timed coding plus CS-fundamentals MCQs.",[["Sliding window & two pointers","Longest Substring Without Repeating Characters|longest-substring-without-repeating-characters|M;Container With Most Water|container-with-most-water|M;3Sum|3sum|M"],["Prefix sums & heaps","Subarray Sum Equals K|subarray-sum-equals-k|M;Kth Largest Element in an Array|kth-largest-element-in-an-array|M"]]],["Technical interviews","DSA, project discussion, approach.",[["Trees & graphs","Binary Tree Level Order Traversal|binary-tree-level-order-traversal|M;Number of Provinces|number-of-provinces|M;Pacific Atlantic Water Flow|pacific-atlantic-water-flow|M"],["Dynamic programming","Unique Paths|unique-paths|M;Longest Common Subsequence|longest-common-subsequence|M"]]],["Managerial / HR round","Fit, then possible PPO after the internship.",[]]],
+"TCS / Infosys / Wipro":[["Online test","Aptitude, reasoning, verbal. Higher-pay roles (Digital, Prime, Specialist Programmer) add coding.",[["Basic coding","Fizz Buzz|fizz-buzz|E;Palindrome Number|palindrome-number|E;Reverse String|reverse-string|E;Contains Duplicate|contains-duplicate|E"],["Arrays","Best Time to Buy and Sell Stock|best-time-to-buy-and-sell-stock|E;Maximum Subarray|maximum-subarray|M;Move Zeroes|move-zeroes|E;Merge Sorted Array|merge-sorted-array|E"]]],["Technical interview","Programming basics, OOP, DBMS, projects.",[["Strings & recursion","Valid Anagram|valid-anagram|E;Valid Parentheses|valid-parentheses|E;Subsets|subsets|M"]]],["HR interview","Communication, relocation, joining.",[]]],
+"Data Analyst (SQL)":[["Online test","SQL queries, aptitude, sometimes a mini case.",[["SQL basics","Second Highest Salary|second-highest-salary|M;Duplicate Emails|duplicate-emails|E;Customers Who Never Order|customers-who-never-order|E;Employees Earning More Than Their Managers|employees-earning-more-than-their-managers|E"]]],["Technical interview","SQL, statistics basics, dataset walk-through.",[["Window functions & ranking","Rank Scores|rank-scores|M;Consecutive Numbers|consecutive-numbers|M;Department Top Three Salaries|department-top-three-salaries|H"]]],["Case / business round","Metric thinking: what would you measure and why. No set list.",[]]],
+"AI / ML":[["Resume & GitHub screen","Projects with results matter more than certificates.",[]],["Online test","Python coding, ML MCQs, sometimes SQL.",[["Arrays & hashing","Top K Frequent Elements|top-k-frequent-elements|M;Product of Array Except Self|product-of-array-except-self|M;Longest Consecutive Sequence|longest-consecutive-sequence|M"]]],["Technical interview","ML basics (bias-variance, metrics), your project, coding.",[["Heaps & DP","Find Median from Data Stream|find-median-from-data-stream|H;Maximum Subarray|maximum-subarray|M;Partition Equal Subset Sum|partition-equal-subset-sum|M"]]],["Team / manager round","Problem solving and learning attitude.",[]]]
+};
+var dco="Google",dfl="All",ds={};
+try{ds=JSON.parse(localStorage.getItem("dsaq")||"{}")}catch(e){}
+var DF={E:["Easy","e"],M:["Medium","m"],H:["Hard","h"]};
+function renderDsa(){
+ var r=document.getElementById("dsa");r.innerHTML="";
+ r.appendChild(el("h2",0,"Company-wise DSA questions by hiring round"));
+ var cs=el("div","chips");Object.keys(QD).forEach(function(k){var b=el("button","f"+(k==dco?" on":""),k);b.onclick=function(){dco=k;renderDsa()};cs.appendChild(b)});r.appendChild(cs);
+ var df=el("div","chips");["All","Easy","Medium","Hard"].forEach(function(k){var b=el("button","f"+(k==dfl?" on":""),k);b.onclick=function(){dfl=k;renderDsa()};df.appendChild(b)});r.appendChild(df);
+ var R=QD[dco],fl=el("div","flow");R.forEach(function(x,i){if(i)fl.appendChild(el("span",0,"→"));fl.appendChild(el("b",0,x[0]))});r.appendChild(fl);
+ var all=[];R.forEach(function(x){x[2].forEach(function(t){t[1].split(";").forEach(function(q){all.push(q.split("|")[1])})})});
+ var dn=all.filter(function(s){return ds[s]}).length,bx=el("div","box");
+ bx.appendChild(el("h2",0,dco+" · solved "+dn+"/"+all.length));var bar=el("div","bar"),fi=el("i");fi.style.width=(all.length?Math.round(dn/all.length*100):0)+"%";bar.appendChild(fi);bx.appendChild(bar);
+ R.forEach(function(x,i){
+  bx.appendChild(el("h4",0,"Stage "+(i+1)+" · "+x[0]));bx.appendChild(el("div","co",x[1]));
+  if(!x[2].length)bx.appendChild(el("div","co","No DSA list for this stage. Prepare projects, fundamentals and stories."));
+  x[2].forEach(function(t){
+   var qs2=t[1].split(";").map(function(q){return q.split("|")}).filter(function(q){return dfl=="All"||DF[q[2]][0]==dfl});
+   if(!qs2.length)return;
+   bx.appendChild(el("div","tag b",t[0]));
+   qs2.forEach(function(q){var row=el("div","dr"),cb=el("input");cb.type="checkbox";cb.checked=!!ds[q[1]];
+    cb.onchange=function(){if(cb.checked)ds[q[1]]=1;else delete ds[q[1]];try{localStorage.setItem("dsaq",JSON.stringify(ds))}catch(e){}renderDsa()};
+    var a=el("a","pb");a.href=LC+q[1]+"/";a.target="_blank";a.rel="noopener";a.appendChild(el("span",0,q[0]));var d=el("i",DF[q[2]][1],DF[q[2]][0]+" ↗");a.appendChild(d);
+    row.appendChild(cb);row.appendChild(a);bx.appendChild(row)});
+  });
+ });
+ r.appendChild(bx);
+ r.appendChild(el("div","note","Stages and questions are typical patterns from public candidate reports, not official lists. Companies change formats by year and team, so confirm on the careers page. Some LeetCode SQL problems need a free account."));
+}
+
+var PF={
+"Google":[["Eligibility Criteria",["Currently enrolled in a Bachelor’s or Master’s degree; this posting lists batches 2027 and 2028.","Programming in at least one language (C++, Java or Python) and solid data structures and algorithms.","Check the posting for any marks requirement; strong projects and an active coding profile help the resume screen."]],["Application & Pathways",["Apply on Google Careers with an updated resume (transcript if asked). Review is usually rolling until the role closes.","Early-year programmes such as STEP have separate eligibility; do not mix them with this role.","A referral can help but is not required."]],["Online Assessment",["Not used for every team or year. When used: a timed coding round with 1–2 problems.","Topics seen: arrays, strings, hashing, graphs, dynamic programming."]],["Technical Interview",["Usually 2 virtual rounds of about 45 minutes, one or two DSA problems each, coded in a shared document.","Explain brute force first, then optimise, then state time and space complexity.","Test your code on edge cases out loud."]],["HR / Final Round",["A behavioural (‘Googleyness’) conversation is often part of the interviews.","Feedback goes to a hiring committee, then team matching. Results can take several weeks."]]],
+"Microsoft":[["Eligibility Criteria",["Pursuing B.Tech/M.Tech or equivalent in CS, IT or related branches; check the posting for graduation year and marks.","Good command of data structures, one programming language and OOP basics."]],["Application & Pathways",["Apply on careers.microsoft.com or through campus drives.","Community channels repost roles; always apply from the official page."]],["Online Assessment",["Typically 2–3 coding questions on a timed platform.","Topics seen: arrays, strings, linked lists, trees."]],["Technical Interview",["Commonly 3–4 virtual rounds: DSA, light design (for example LRU cache), and project questions.","Clean, readable code and edge cases matter."]],["HR / Final Round",["Hiring manager round: project deep dive, learning attitude and fit."]]],
+"Salesforce":[["Eligibility Criteria",["B.E/B.Tech in CS, IT or circuit branches (as listed).","Stipend is not disclosed in the listing; confirm on the official page."]],["Application & Pathways",["Apply through the Salesforce careers page; the listing was reposted by job boards."]],["Online Assessment",["Coding round on a hosted platform, sometimes with CS-fundamentals MCQs (OOP, DBMS, OS)."]],["Technical Interview",["DSA problems plus questions on your projects and OOP."]],["HR / Final Round",["Manager / HR round on culture fit and expectations."]]],
+"Walmart Global Tech":[["Eligibility Criteria",["Listing requires a 7.0+ aggregate CGPA.","B.Tech/B.E in CS or related branch; graduation year 2027."]],["Application & Pathways",["Apply through the link on the listing; strong performers can receive a pre-placement offer (PPO)."]],["Online Assessment",["Timed coding questions, often with CS-fundamentals MCQs. Speed with correct edge cases matters."]],["Technical Interview",["DSA, discussion of projects and your problem-solving approach."]],["HR / Final Round",["Managerial / HR round on fit, then PPO evaluation after the internship."]]],
+"Infosys":[["Eligibility Criteria",["Qualifying degrees: B.E., B.Tech, M.E., M.Tech, MCA, or 5-year integrated M.Sc.","Academics: minimum 60% or 6 CGPA in Class 10 and 12, and 65% or 6.8 CGPA in graduation/post-graduation.","Zero active backlogs at the time of selection."]],["Application & Pathways",["On-campus drives run through your college placement cell.","Off-campus drives are posted on the official Infosys careers portal or partner platforms.","HackWithInfy and special contests: top performers can skip initial screening and go straight to interviews for DSE or Specialist Programmer (SP)."]],["Online Assessment (Coding Test)",["Duration: 180 minutes.","Format: 3 coding questions from Easy to Hard (arrays, trees, graphs, dynamic programming).","Languages: C, C++, Java, Python, JavaScript.","Cut-off: about 1 to 1.5 solved questions is commonly reported for DSE (₹6.25 LPA); 2 or more targets the higher SP tiers. Relative performance in the pool matters."]],["Technical Interview",["Duration about 45–60 minutes.","Live or paper coding and logic problems (Easy to Medium).","CS fundamentals: OOP, DBMS/SQL, OS, SDLC.","Deep dive into your resume, projects and problem-solving approach."]],["HR Interview",["Behavioural assessment, willingness to relocate, career aspirations and communication skills."]]]
+};
+var PS={"Infosys":[["PrepInsta: recruitment process","https://prepinsta.com/infosys-sp-and-dse/recruitment-process/"],["PrepInsta: DSE role","https://prepinsta.com/infosys-sp-and-dse/digital-specialist-engineer/"],["Great Learning: SP/DSE guide","https://www.mygreatlearning.com/blog/infosys-sp-dse-interview-guide-2026/"],["GeeksforGeeks: DSE experience","https://www.geeksforgeeks.org/interview-experiences/infosys-interview-experience-for-dse-4/"],["Reddit: oncampus DSE/SP prep","https://www.reddit.com/r/PlacementsPrep/comments/1uxan9x/infosys_oncampus_dse_sp_l1l2l3_how_do_you_prep/"]]};
+var GEN={sde:["Software / SDE","Basic DSA and one language, plus CS fundamentals","A coding round (1–2 problems)"],data:["Data","SQL, Excel and Python or a BI tool","SQL queries, aptitude and sometimes a small case"],ai:["AI / ML","Python, ML basics and one project with results","Python coding, ML MCQs, sometimes SQL"]};
+var det=null,DM={"YouTube (Google)":"Google","Walmart Global Tech":"TCS / Infosys / Wipro"};
+function profile(d){var c=d[2];if(c=="YouTube (Google)")c="Google";if(PX[c])return[PX[c],true];if(PF[c])return[PF[c],true];var g=GEN[d[0]];
+ return[[["Eligibility Criteria",["From the listing: "+d[9],"Graduation year: "+d[7]+". Confirm degree and marks on the official page.","Skills usually expected: "+g[1]+"."]],["Application & Pathways",["Apply through the source listed below, then confirm the role exists on the company’s own careers page.","Never pay any fee to apply for an internship."]],["Online Assessment",["Not published by the company. Typical for "+g[0]+" roles: "+g[2]+"."]],["Technical Interview",["Typical: 1–2 rounds covering fundamentals, your projects and a live problem."]],["HR / Final Round",["Typical: a short HR or manager chat on availability, stipend and conversion to a full-time offer."]]],false]}
+function showDet(d){det=d;view="det";try{location.hash="role"}catch(e){}render();window.scrollTo(0,0)}
+window.onhashchange=function(){if(!location.hash&&view=="det"){view="jobs";render()}};
+function renderDet(){
+ var r=document.getElementById("det");r.innerHTML="";var d=det,v=st[key(d)],pr=profile(d);
+ var bk=el("button","sm back","← Back to opportunities");bk.onclick=function(){view="jobs";try{history.replaceState(null,"",location.pathname)}catch(e){}render()};r.appendChild(bk);
+ var h=el("div","dh"),av=el("div","av",d[2].charAt(0));av.style.background="linear-gradient(135deg,hsl("+hue(d[2])+",85%,65%),hsl("+(hue(d[2])+50)+",85%,60%))";
+ var i=el("div","info");i.appendChild(el("h3",0,d[1]));i.appendChild(el("div","co",d[2]+" · "+d[3]));
+ var m=el("div","meta");m.appendChild(el("span","tag b","Batch "+d[7]));m.appendChild(el("span","tag",d[4]));m.appendChild(el("span","tag w",d[8]));i.appendChild(m);h.appendChild(av);h.appendChild(i);r.appendChild(h);
+ r.appendChild(el("p","sub",d[9]));
+ var ac=el("div","acts"),a=el("a","go","Apply →");a.href=d[6];a.target="_blank";a.rel="noopener";ac.appendChild(a);
+ [["s","★ Save"],["a","✓ Mark applied"]].forEach(function(x){var bt=el("button","sm"+(v==x[0]?" on":""),x[1]);bt.onclick=function(){if(st[key(d)]==x[0])delete st[key(d)];else st[key(d)]=x[0];save();renderDet()};ac.appendChild(bt)});r.appendChild(ac);
+ var ub=el("button","sm","🔄 Refresh this process from the web (live)"),um=el("div","co");ub.onclick=function(){um.textContent="Searching the web…";
+  api("process",{company:d[2],role:d[1]}).then(function(a){PX[d[2]=="YouTube (Google)"?"Google":d[2]]=a;try{localStorage.setItem("pfx",JSON.stringify(PX))}catch(e){}renderDet()}).catch(function(){um.textContent="Live lookup needs the Vercel deployment with ANTHROPIC_API_KEY set. Use the search links at the bottom meanwhile."})};
+ r.appendChild(ub);r.appendChild(um);
+ r.appendChild(el("div","note",pr[1]?"Process below is compiled from public candidate reports and company pages. It changes by year and team, so confirm on the official page.":"This company has not published its process in the listing, so this is a typical outline, not company-specific facts. Confirm with the company before relying on it."));
+ pr[0].forEach(function(s2,n){var b=el("div","sec"),t=el("h3");t.appendChild(el("em",0,(n+1)+"."));t.appendChild(document.createTextNode(s2[0]));b.appendChild(t);var u=el("ul");s2[1].forEach(function(x){u.appendChild(el("li",0,x))});b.appendChild(u);r.appendChild(b)});
+ var ck2=d[2]=="YouTube (Google)"?"Google":d[2],qk=QD[ck2]?ck2:{sde:"TCS / Infosys / Wipro",data:"Data Analyst (SQL)",ai:"AI / ML"}[d[0]];
+ var b6=el("div","sec"),t6=el("h3");t6.appendChild(el("em",0,(pr[0].length+1)+"."));t6.appendChild(document.createTextNode("Prepare for this role"));b6.appendChild(t6);
+ var u6=el("ul");TIPS[d[0]].forEach(function(x){u6.appendChild(el("li",0,x))});b6.appendChild(u6);
+ var go=el("button","sm","Open company-wise DSA questions →");go.onclick=function(){dco=qk;view="dsa";render();window.scrollTo(0,0)};b6.appendChild(go);r.appendChild(b6);
+ r.appendChild(el("h2",0,"Sources & more reports"));var sc=el("div","src"),q=encodeURIComponent(d[2].replace(" (Google)","")+" intern interview experience");
+ (PS[d[2]]||[]).concat([["Official listing ("+d[5]+")",d[6]],["GeeksforGeeks reports","https://www.google.com/search?q=site:geeksforgeeks.org+"+q],["Reddit discussions","https://www.google.com/search?q=site:reddit.com+"+q],["LeetCode discuss","https://leetcode.com/discuss/interview-experience/"]]).forEach(function(p){var l=el("a",0,p[0]+" ↗");l.href=p[1];l.target="_blank";l.rel="noopener";sc.appendChild(l)});r.appendChild(sc);
+}
+
+var ctf="All",lt="Service-based companies",lq="",lmsg="",PX={},XR=[],dpf="All",dpq="",dsr={};
+try{PX=JSON.parse(localStorage.getItem("pfx")||"{}")}catch(e){}
+try{XR=JSON.parse(localStorage.getItem("xr")||"[]")}catch(e){}
+try{dsr=JSON.parse(localStorage.getItem("dsapr")||"{}")}catch(e){}
+D=D.concat(XR);
+var SVC=/^(ltimindtree|mphasis|hexaware|persistent|coforge|genpact|tcs|infosys|wipro|cognizant|accenture|capgemini|hcl|tech mahindra|ltimindtree|mphasis|hexaware|persistent|coforge|genpact|deloitte|zensar|birlasoft)/i,STU=/zeotap|fluxgen|^unique|zenotalent|codec|analytics career/i;
+function ctype(d){return d[10]||(SVC.test(d[2])?"Service-based":STU.test(d[2])?"Startup":"Product / MNC")}
+function api(kind,body){body.kind=kind;return fetch("/api/search",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)}).then(function(r){return r.json().then(function(j){if(!r.ok)throw new Error(j.error||"failed");return j.data})})}
+function jx(t){var m=t.replace(/```json|```/g,"").match(/[\[{][\s\S]*[\]}]/);return m?m[0]:"[]"}
+function claude(q){return fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:"claude-sonnet-4-6",max_tokens:1000,tools:[{type:"web_search_20250305",name:"web_search"}],messages:[{role:"user",content:q}]})}).then(function(r){return r.json()}).then(function(j){if(!j.content)throw new Error("no");return j.content.filter(function(b){return b.type=="text"}).map(function(b){return b.text}).join("\n")})}
+function renderLive(){
+ var b=document.getElementById("live");b.innerHTML="";b.className="lv";
+ b.appendChild(el("div","co","Search the whole web for new 2027-batch roles (live, server-side; new offers also arrive automatically every day). Covers service-based, product and startup companies."));
+ var sl=el("select");["Service-based companies","Product-based companies","Startups","All kinds of companies"].forEach(function(o){var op=el("option",0,o);if(o==lt)op.selected=true;sl.appendChild(op)});sl.onchange=function(){lt=sl.value};
+ var inp=el("input");inp.placeholder="Optional: role, city, e.g. data analyst Pune";inp.value=lq;inp.oninput=function(){lq=inp.value};
+ var go=el("button","sm","🔎 Search web now"),ms=el("div","co",lmsg);
+ go.onclick=function(){lmsg="Searching the web…";ms.textContent=lmsg;
+  api("jobs",{type:lt,query:lq}).then(function(a){var add=0;a.forEach(function(x){if(!x.u||!x.t)return;var r=[x.s||"sde",x.t,x.c||"",x.l||"India","Job / Internship","Web search",x.u,x.b||"2027","Found "+new Date().toDateString().slice(4),x.n||""];r[10]=SVC.test(r[2])?"Service-based":STU.test(r[2])?"Startup":(lt.indexOf("Startup")>-1?"Startup":"Product / MNC");
+    if(!D.some(function(d){return key(d)==key(r)})){D.push(r);XR.push(r);add++}});
+   try{localStorage.setItem("xr",JSON.stringify(XR))}catch(e){}lmsg="Added "+add+" new roles from the web.";render()}).catch(function(){lmsg="Live search needs the Vercel deployment with ANTHROPIC_API_KEY set. Use the search links below meanwhile.";ms.textContent=lmsg})};
+ b.appendChild(sl);b.appendChild(inp);b.appendChild(go);b.appendChild(ms);
+}
+function P5(a,b,c,d,e){return[["Eligibility Criteria",a],["Application & Pathways",b],["Online Assessment",c],["Technical Interview",d],["HR / Final Round",e]]}
+var NT=["Rules change every year. Read the current notice for marks, backlog and batch limits."];
+PF["TCS"]=P5(["Engineering and science graduates of the batch named in the current notice.","Historically about 60% or 6.0 CGPA through academics."].concat(NT),["Register for TCS NQT on the TCS NextStep portal; the NQT score is used for Ninja, Digital and Prime.","Campus drives run via placement cells; CodeVita and special contests can open higher roles."],["NQT has a Foundation section (numerical, verbal, reasoning) and an Advanced section (advanced quant, reasoning and advanced coding).","Higher scores unlock Digital and Prime."],["Technical interview: programming basics, DBMS, OOP and projects, sometimes a coding problem.","A managerial round may follow for higher bands."],["HR round: communication, relocation, joining rules and career goals."]);
+PF["Wipro"]=P5(["Typically 60% or 6.0 CGPA in 10th, 12th and graduation for Elite.","B.E/B.Tech and some other degrees depending on the notice."].concat(NT),["Apply on careers.wipro.com or via campus; Elite NTH is the standard fresher drive."],["Online test with aptitude, logical, verbal and written communication, plus coding questions."],["Technical interview on a language, DBMS, OOP and projects."],["HR interview on relocation, shifts and joining."]);
+PF["Cognizant"]=P5(["Around 60% in academics for most drives; degrees vary by track (GenC, GenC Next, GenC Elevate)."].concat(NT),["Apply on careers.cognizant.com or through campus. Higher tracks test coding harder."],["Aptitude, logical reasoning and technical or coding sections; Next and Elevate add harder coding."],["Technical interview on programming, DBMS and projects."],["HR / communication round."]);
+PF["Accenture"]=P5(["Guides report a minimum 60% aggregate.","Engineering and some science degrees for ASE and Advanced ASE."].concat(NT),["Campus or off-campus drives via Accenture careers; two fresher tracks: ASE and Advanced ASE."],["About four test stages are reported: cognitive and technical MCQs, coding and a communication assessment."],["Technical interview on coding, fundamentals and projects, mainly for Advanced ASE."],["HR round on communication, location and joining."]);
+PF["Capgemini"]=P5(["Often around 60% through academics; some Analyst roles accept any specialization."].concat(NT),["Apply on the careers site or via campus; Exceller is the higher-pay track."],["Game-based aptitude, pseudocode and English assessment; Exceller adds coding."],["Technical interview on programming, DBMS and projects."],["HR interview."]);
+PF["HCLTech"]=P5(["Around 60% through academics; engineering streams for Graduate Engineer Trainee.","Programmes like AMP list their own rules."].concat(NT),["Apply on careers.hcltech.com or via campus drives."],["Online aptitude plus technical / coding questions."],["Technical interview on fundamentals and projects."],["HR round."]);
+PF["Tech Mahindra"]=P5(["Engineering graduates of the notified batch; marks cut-offs apply."].concat(NT),["Apply on careers.techmahindra.com. Tests are often run through assessment partners such as AMCAT."],["Aptitude, coding and communication sections."],["Technical interview on programming, DBMS and projects."],["HR round."]);
+var DP={"Arrays & Hashing":"1:Two Sum:E;217:Contains Duplicate:E;242:Valid Anagram:E;49:Group Anagrams:M;347:Top K Frequent Elements:M;238:Product of Array Except Self:M;128:Longest Consecutive Sequence:M;560:Subarray Sum Equals K:M;283:Move Zeroes:E;88:Merge Sorted Array:E;121:Best Time to Buy and Sell Stock:E;53:Maximum Subarray:M;54:Spiral Matrix:M;48:Rotate Image:M;73:Set Matrix Zeroes:M",
+"Basics (service-company tests)":"412:Fizz Buzz:E;9:Palindrome Number:E;344:Reverse String:E;13:Roman to Integer:E;66:Plus One:E;136:Single Number:E;268:Missing Number:E;26:Remove Duplicates from Sorted Array:E",
+"Two Pointers & Sliding Window":"125:Valid Palindrome:E;167:Two Sum II - Input Array Is Sorted:M;15:3Sum:M;11:Container With Most Water:M;42:Trapping Rain Water:H;3:Longest Substring Without Repeating Characters:M;424:Longest Repeating Character Replacement:M;567:Permutation in String:M;76:Minimum Window Substring:H;239:Sliding Window Maximum:H",
+"Stack & Queue":"20:Valid Parentheses:E;155:Min Stack:M;739:Daily Temperatures:M;150:Evaluate Reverse Polish Notation:M;84:Largest Rectangle in Histogram:H",
+"Binary Search":"704:Binary Search:E;74:Search a 2D Matrix:M;875:Koko Eating Bananas:M;153:Find Minimum in Rotated Sorted Array:M;33:Search in Rotated Sorted Array:M;4:Median of Two Sorted Arrays:H",
+"Linked List":"206:Reverse Linked List:E;21:Merge Two Sorted Lists:E;141:Linked List Cycle:E;143:Reorder List:M;19:Remove Nth Node From End of List:M;2:Add Two Numbers:M;138:Copy List with Random Pointer:M;146:LRU Cache:M;23:Merge k Sorted Lists:H",
+"Trees":"226:Invert Binary Tree:E;104:Maximum Depth of Binary Tree:E;543:Diameter of Binary Tree:E;110:Balanced Binary Tree:E;100:Same Tree:E;102:Binary Tree Level Order Traversal:M;199:Binary Tree Right Side View:M;98:Validate Binary Search Tree:M;230:Kth Smallest Element in a BST:M;236:Lowest Common Ancestor of a Binary Tree:M;105:Construct Binary Tree from Preorder and Inorder Traversal:M;124:Binary Tree Maximum Path Sum:H;297:Serialize and Deserialize Binary Tree:H",
+"Heaps":"703:Kth Largest Element in a Stream:E;973:K Closest Points to Origin:M;215:Kth Largest Element in an Array:M;621:Task Scheduler:M;295:Find Median from Data Stream:H",
+"Backtracking":"78:Subsets:M;46:Permutations:M;39:Combination Sum:M;79:Word Search:M;131:Palindrome Partitioning:M;51:N-Queens:H",
+"Graphs":"200:Number of Islands:M;133:Clone Graph:M;695:Max Area of Island:M;994:Rotting Oranges:M;417:Pacific Atlantic Water Flow:M;207:Course Schedule:M;210:Course Schedule II:M;547:Number of Provinces:M;743:Network Delay Time:M;127:Word Ladder:H",
+"Dynamic Programming":"70:Climbing Stairs:E;198:House Robber:M;213:House Robber II:M;5:Longest Palindromic Substring:M;322:Coin Change:M;300:Longest Increasing Subsequence:M;139:Word Break:M;62:Unique Paths:M;1143:Longest Common Subsequence:M;416:Partition Equal Subset Sum:M;72:Edit Distance:M",
+"Greedy & Intervals":"55:Jump Game:M;45:Jump Game II:M;134:Gas Station:M;56:Merge Intervals:M;57:Insert Interval:M;435:Non-overlapping Intervals:M",
+"SQL":"175:Combine Two Tables:E;176:Second Highest Salary:M;181:Employees Earning More Than Their Managers:E;182:Duplicate Emails:E;183:Customers Who Never Order:E;178:Rank Scores:M;180:Consecutive Numbers:M;185:Department Top Three Salaries:H"};
+function renderDsp(){
+ var r=document.getElementById("dsp");r.innerHTML="";
+ r.appendChild(el("h2",0,"DSA practice · LeetCode problems by topic (any company)"));
+ var df=el("div","chips");["All","Easy","Medium","Hard"].forEach(function(k){var b=el("button","f"+(k==dpf?" on":""),k);b.onclick=function(){dpf=k;renderDsp()};df.appendChild(b)});r.appendChild(df);
+ var inp=el("input","dpq");inp.type="search";inp.placeholder="Search by name or number…";inp.value=dpq;r.appendChild(inp);
+ var pg=el("div"),ls=el("div");r.appendChild(pg);r.appendChild(ls);
+ function fill(){pg.innerHTML="";ls.innerHTML="";var tot=0,dn=0;
+  Object.keys(DP).forEach(function(tp){var qs2=DP[tp].split(";").map(function(x){return x.split(":")});tot+=qs2.length;qs2.forEach(function(q){if(dsr[q[0]])dn++});
+   qs2=qs2.filter(function(q){return(dpf=="All"||DF[q[2]][0]==dpf)&&(q[0]+" "+q[1]).toLowerCase().indexOf(dpq.toLowerCase())>-1});if(!qs2.length)return;
+   var bx=el("div","box");bx.appendChild(el("h2",0,tp));
+   qs2.forEach(function(q){var row=el("div","dr"),cb=el("input");cb.type="checkbox";cb.checked=!!dsr[q[0]];
+    cb.onchange=function(){if(cb.checked)dsr[q[0]]=1;else delete dsr[q[0]];try{localStorage.setItem("dsapr",JSON.stringify(dsr))}catch(e){}fill()};
+    var a=el("a","pb");a.href=LC+q[1].toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")+"/";a.target="_blank";a.rel="noopener";a.appendChild(el("span",0,"#"+q[0]+" · "+q[1]));a.appendChild(el("i",DF[q[2]][1],DF[q[2]][0]+" ↗"));row.appendChild(cb);row.appendChild(a);bx.appendChild(row)});ls.appendChild(bx)});
+  var b2=el("div","box");b2.appendChild(el("h2",0,"Solved "+dn+"/"+tot));var bar=el("div","bar"),fi=el("i");fi.style.width=Math.round(dn/tot*100)+"%";bar.appendChild(fi);b2.appendChild(bar);pg.appendChild(b2)}
+ inp.oninput=function(){dpq=inp.value;fill()};fill();
+}
+function render(){
+ var v=document.getElementById("views");v.innerHTML="";
+ [["jobs","Opportunities"],["prep","Prep Hub"],["dsa","DSA by Company"],["dsp","DSA Practice"]].forEach(function(x){var b=el("button","tab"+(view==x[0]?" on":""),x[1]);b.onclick=function(){view=x[0];render()};v.appendChild(b)});
+ document.getElementById("jobsv").hidden=view!="jobs";document.getElementById("prep").hidden=view!="prep";document.getElementById("dsa").hidden=view!="dsa";document.getElementById("det").hidden=view!="det";document.getElementById("dsp").hidden=view!="dsp";v.hidden=view=="det";
+ if(view=="jobs")renderJobs();else if(view=="prep")renderPrep();else if(view=="dsa")renderDsa();else if(view=="dsp")renderDsp();else renderDet();
+}
+render();
+fetch("/api/jobs").then(function(r){return r.json()}).then(function(j){
+ if(!j.jobs||!j.jobs.length)return;var add=0;
+ j.jobs.forEach(function(r){if(!D.some(function(d){return key(d)==key(r)})){D.push(r);add++}});
+ var u=document.getElementById("upd");if(u&&j.updated)u.textContent="Auto-updated "+new Date(j.updated).toDateString().slice(4)+" · Batch 2027";
+ if(add)render()}).catch(function(){});
+</script>
+</body>
+</html>

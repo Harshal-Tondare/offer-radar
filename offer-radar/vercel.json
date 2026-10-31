@@ -1,0 +1,5 @@
+{
+  "outputDirectory": "public",
+  "crons": [{ "path": "/api/refresh", "schedule": "30 3 * * *" }],
+  "functions": { "api/*.js": { "maxDuration": 60 } }
+}
